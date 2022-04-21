@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="text-center mx-1 my-3">
     <img :src="img" alt="" class="img-fluid">
     <h3 class="text-uppercase mt-3">{{brano}}</h3>
     <p>{{autore}}</p>
@@ -22,10 +22,10 @@ export default {
 
 <style scoped lang="scss">
     div{
-        margin: 15px 15px;
+        
         padding: 10px;
         background: #2e3a46;
-        flex-basis: calc((100% / 5) - 40px);
+        
         h3{
             color: white;
             margin: 10px 0;

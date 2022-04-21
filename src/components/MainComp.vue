@@ -1,6 +1,6 @@
 <template>
-  <div class="container mt-3 sfondo_container">
-      <div class="cont">
+  <div class="container mt-3 sfondo_container ">
+      <div class="row row-cols-6 justify-content-between">
           <DischiComp
             v-for="(element, index) in dischi"
             :key="index"
@@ -41,9 +41,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    .cont{
-        display: flex;
-        flex-wrap: wrap;
-        
-    }
+
 </style>

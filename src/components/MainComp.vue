@@ -1,31 +1,51 @@
 <template>
+<div>
+    <HeaderComp @funzRicerca='metodoRicerca'/>
   <div class="container mt-3 sfondo_container ">
-      <div class="row row-cols-6 justify-content-between">
-          <DischiComp
-            v-for="(element, index) in dischi"
+      <div class="row row-cols-6">
+          <DischiComp           
+            v-for="(element, index) in filtraggio"
             :key="index"
             :autore='element.author'
             :img='element.poster'
             :anno='element.year'
             :brano='element.title'
+            :genere='element.genre' 
           />
       </div>
 
   </div>
+</div>
+
 </template>
 
 <script>
+import HeaderComp from './HeaderComp.vue'
 import DischiComp from './DischiComp.vue'
 import axios from 'axios';
 
 export default {
   name: 'MainComp',
   components:{
-      DischiComp
+      DischiComp,
+      HeaderComp
   },
   data() {
       return {
-          dischi:[]
+          dischi:[],
+          testoRicerca:''
+      }
+  },
+  computed:{
+      filtraggio(){
+          if (this.testoRicerca=='') {
+              return this.dischi
+          }
+          return this.dischi.filter((element)=> {
+              return element.genre
+                    .toLowerCase()
+                    .includes(this.testoRicerca.toLowerCase())
+          })
       }
   },
   created() {
@@ -35,7 +55,11 @@ export default {
           this.dischi=res.data.response
       })
   },
-
+  methods: {
+        metodoRicerca(testo){
+        this.testoRicerca=testo;
+  },
+  }
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center col mx-1 my-3 p-3">
+  <div class="text-center col mx-3 my-3 p-3">
     <img :src="img" alt="" class="img-fluid">
     <h4 class="text-uppercase mt-3">{{brano}}</h4>
     <p>{{autore}}</p>

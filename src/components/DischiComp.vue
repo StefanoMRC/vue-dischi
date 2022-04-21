@@ -1,7 +1,7 @@
 <template>
-  <div class="text-center mx-1 my-3">
+  <div class="text-center col mx-1 my-3 p-3">
     <img :src="img" alt="" class="img-fluid">
-    <h3 class="text-uppercase mt-3">{{brano}}</h3>
+    <h4 class="text-uppercase mt-3">{{brano}}</h4>
     <p>{{autore}}</p>
     <span>{{anno}}</span>
   </div>
@@ -23,10 +23,10 @@ export default {
 <style scoped lang="scss">
     div{
         
-        padding: 10px;
+        
         background: #2e3a46;
         
-        h3{
+        h4{
             color: white;
             margin: 10px 0;
         }
